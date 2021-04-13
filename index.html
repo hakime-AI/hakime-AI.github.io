@@ -106,12 +106,13 @@
                     Anglais-intermediaire</p>
 
                     <form id="inscription" action="">
-                        <input type="text" name="pseudo" placeholder="pseudo"><br>
-                        <input type="email" name="email" placeholder="email"><br>
-                        <input type="email" name="email-confirmation" placeholder="email-confirmation"><br>
-                        <input type="password" name="mdp" placeholder="mdp"><br>
-                        <input type="submit" name="inscription" placeholder="inscription"><br>
+                        <input type="text" name="pseudo" placeholder="pseudo" id="pseudo"><br>
+                        <input type="email" name="email" placeholder="email" id="email"><br>
+                        <input type="email" name="email-confirmation" placeholder="email-confirmation" id="email2"><br>
+                        <input type="password" name="mdp" placeholder="Mot de passe" id="mdp"><br>
+                        <input type="submit" value="inscription"><br>
                     </form>
+                    <p style="color: red;" id="erreur"></p>
                 </aside>
             </div>
         </section>
@@ -129,5 +130,6 @@
                 </ul>
             </div>
         </footer>
+        <script src="js/app.js"></script>
     </body>
 </html>
