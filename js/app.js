@@ -12,6 +12,7 @@ document.getElementById("inscription").addEventListener("submit",function(e) {
     }
     
     if (erreur) {
+        e.preventDefault();
         document.getElementById("erreur").innerHTML = erreur;
         return false;
     }else {
