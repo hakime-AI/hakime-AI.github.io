@@ -21,8 +21,6 @@ footer
     padding: 0px auto;
     display: flex;
     justify-content: space-between;
-    
-    
 }
 
 h1
@@ -60,13 +58,12 @@ body
 
 header,section,footer
 {
-    width: 100%;
+    
     padding: 5px;
 }
 section
 {
-    width: 1000px;
-    display: flex;
+    
     justify-content: space-between;
 }
 
@@ -83,7 +80,6 @@ footer ul
         align-items: center;
         font-weight: bold;   
     }
-    
     body
     {
         align-items: flex-start;
