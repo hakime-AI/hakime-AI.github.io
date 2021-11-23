@@ -1,115 +1,316 @@
-<!DOCTYPE html>
-<html lang="en">
+* {
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  font-family: "Inter", sans-serif;
+  
+  padding: 5px;
+}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/Style.css">
-    <title>Document</title>
-    <!-- <script src="../Js/jquery-3.6.0.min.js"></script> -->
-</head>
+.container {
+  display: grid;
+  height: auto;
+  scroll-behavior: smooth;
+  grid-template-columns: repeat(12, minmax(80px, 1fr));
+  grid-template-rows: 10vh 90vh auto 10vh;
+  grid-template-areas:
+    "nav nav nav nav nav nav nav nav nav nav nav nav"
+    "main main main main main main main main main main main main"
+    "content content content content content content content content content content content content"
+    "footer footer footer footer footer footer footer footer footer footer footer footer";
+  grid-gap: 0.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #004d40;
+  text-align: center;
+}
+/* main blocks */
+nav,
+main,
+#sidebar,
+#content,
+footer,
+#button {
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  border-radius: 5px;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  grid-area: nav;
+  position: sticky;
+  top: 0;
+  background: rgba(255, 255, 255, 0.5);
+}
 
-<body>
-    <div class="container">
-        <nav>
-            <h1>Navbar</h1>
-            <div id="menu">
-                <a href="#">lorem</a>
-                <a href="#">lorem</a>
-                <a href="#">lorem</a>
-                <a href="#">lorem</a>
-                <a href="#">lorem</a>
-                <a href="#">lorem</a>
-            </div>
-        </nav>
+main {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  grid-area: main;
+  gap: 5px;
+}
 
+#sidebar {
+  position: fixed;
+  top: 20vh;
+  left: 0;
+  height: 30vh;
+  width: 10vh;
+  background: rgba(255, 255, 255, 0.5);
+  z-index: 1000;
+}
 
+#button {
+  position: fixed;
+  top: 25vh;
+  left: 8.5vh;
+  height: 5vh;
+  width: 5vh;
+  background: white;
+  border-radius: 0 150px 150px 0;
+  z-index: 1500;
+}
 
+#content {
+  grid-area: content;
+  display: grid;
+  grid-template-rows: repeat(2, auto);
+}
 
-        <input type="checkbox" class="navigationCheckbox" id="navi">
+footer {
+  grid-area: footer;
+}
+/* sub blocks */
+#menu {
+  display: flex;
+}
 
+#banner {
+  display: none;
+}
+#banner1 {
+  grid-area: 2/7/3/11;
+  /* box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset,
+    rgba(0, 0, 0, 0.1) 0px 1px 2px 0px; */
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#banner2 {
+  grid-area: 3/6/6/10;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset,
+    rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+  border-radius: 5px;
+}
+#banner3 {
+  grid-area: 1/3/4/7;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset,
+    rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+  border-radius: 5px;
+}
 
-        <div id="sidebar">
-            <div id="buttonLook">
-                <label for="navi" class="navigationBtn">
-                    <img src="image/arrow_right.svg" alt="">
-                </label>
-            </div>
+h1,
+div a,
+#banner3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
-            <ul class="navigationListe">
+div a:visited {
+  color: #004d40;
+}
 
-                <li class="navigationItem Accueil"><a href="#" class="liens">lorem</a></li>
+/* h1 {
+  
+} */
 
-                <li class="navigationItem Nos produits"><a href="#" class="liens">lorem</a></li>
+h2 {
+  display: flex;
+  justify-content: center;
+  font-size: 5vw;
+}
 
-                <li class="navigationItem Blog"><a href="#" class="liens">lorem</a></li>
+article {
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
 
-                <li class="navigationItem À propos"><a href="#" class="liens">lorem</a></li>
+#article1,
+#article2,
+#article3,
+#aside1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#article1,
+#article2,
+#article3 {
+  min-width: 15rem;
+  max-width: 30rem;
+}
 
-                <li class="navigationItem Contact"><a href="#" class="liens">lorem</a></li>
-            </ul>
+#article1 > *,
+#article2 > *,
+#article3 > *,
+#aside1 > * {
+  margin: 5px;
+}
 
+#content1,
+#content2,
+#content3 {
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset,
+    rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+  border-radius: 5px;
+  width: 15vw;
+  height: 15vw;
+  min-width: 250px;
+  min-height: 250px;
+  margin: 10px;
+}
 
-        </div>
-        <main>
-            <div id="banner">Main</div>
-            <div id="banner1">
-                <h2>Welcome</h2>
-            </div>
-            <div id="banner2"><img src="image/iphone.gif" alt=""></div>
-            <div id="banner3">
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis fugiat minus asperiores odio
-                    tenetur voluptatem dolor cumque enim sapiente quas unde fuga accusantium, laudantium, iure alias,
-                    quos id nostrum dolorem!</p>
-            </div>
+aside {
+  display: flex;
+  justify-content: center;
+}
 
-        </main>
+#content11 {
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset,
+    rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+  border-radius: 5px;
+  width: 20vw;
+  height: 20vw;
+  min-width: 250px;
+  min-height: 250px;
+  margin: 10px;
+}
 
-        <div id="content">
-            <article>
-                <div id="article1">
-                    <h3>Article1</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut ab porro optio fuga eos commodi dicta
-                        necessitatibus aperiam tenetur quasi earum sequi voluptatibus dignissimos, officia quo
-                        consectetur est libero velit?</p>
-                    <div id="content1">Content1</div>
-                </div>
-                <div id="article1">
-                    <h3>Article1</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut ab porro optio fuga eos commodi dicta
-                        necessitatibus aperiam tenetur quasi earum sequi voluptatibus dignissimos, officia quo
-                        consectetur est libero velit?</p>
-                    <div id="content2">Content2</div>
-                </div>
-                <div id="article1">
-                    <h3>Article1</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut ab porro optio fuga eos commodi dicta
-                        necessitatibus aperiam tenetur quasi earum sequi voluptatibus dignissimos, officia quo
-                        consectetur est libero velit?</p>
-                    <div id="content3">Content3</div>
-                </div>
+/* others */
 
-            </article>
-            <aside>
-                <div id="aside1">
-                    <h3>Aside1</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br> Ut ab porro optio fuga eos commodi
-                        dicta
-                        necessitatibus aperiam tenetur quasi <br> earum sequi voluptatibus dignissimos, officia quo
-                        consectetur est libero velit?</p>
-                    <div id="content11">Content11</div>
-                </div>
-            </aside>
-        </div>
+div img {
+  width: 100%;
+  height: 100%;
+}
 
-        <footer>
-            <div id="information">Footer </div>
-        </footer>
-    </div>
+a {
+  text-align: center;
+  display: block;
+  font-family: inherit;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 1rem;
+}
+/* button debute  */
 
+.navigationCheckbox {
+  display: none;
+}
 
-    <script src="../Js/Script.js"></script>
-</body>
+#buttonLook {
+  position: relative;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 0 1px;
+  height: 2rem;
+  width: 2rem;
+  position: fixed;
+  top: 1rem;
+  right: -1.5rem;
+  border-radius: 0 50% 50% 0;
+  z-index: 2000;
+  text-align: center;
+}
 
-</html>
+.liens {
+  margin: 0;
+}
+
+.navigationBtn {
+  position: relative;
+  height: 2rem;
+  width: -2rem;
+  position: fixed;
+  top: 1rem;
+  right: -1.5rem;
+  border-radius: 50%;
+  z-index: 2000;
+  text-align: center;
+  cursor: pointer;
+}
+
+#sidebar {
+  transition: all 0.8s cubic-bezier(1, 0.01, 0.71, 0.75);
+  transform: translate(-100%);
+  background-color: #fff;
+}
+
+.navigationListe {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position: relative;
+  list-style-type: none;
+  text-align: center;
+  height: 100%;
+}
+
+.navigationCheckbox:checked ~ #sidebar {
+  opacity: 1;
+  transform: translate(0);
+}
+.navigationCheckbox:checked ~ #sidebar {
+  opacity: 1;
+}
+.navigationCheckbox:checked ~ #sidebar .navigationBtn {
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+}
+
+/* button end  */
+@media only screen and (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 10vh 100vw auto 10vh;
+    grid-template-areas:
+      "nav"
+      "main"
+      "content"
+      "footer";
+  }
+  main {
+    grid-template-columns: repeat(2, auto);
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  #banner1 {
+    grid-area: 1/1/2/-1;
+  }
+  #banner2 {
+    grid-area: 2/1/-1/-1;
+  }
+  #banner3,
+  #sidebar,
+  #menu {
+    display: none;
+  }
+  article {
+    flex-wrap: wrap;
+  }
+}
