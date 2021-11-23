@@ -4,7 +4,7 @@
 }
 body {
   font-family: "Inter", sans-serif;
-  gap: 5px;
+  
   padding: 5px;
 }
 
@@ -19,7 +19,7 @@ body {
     "main main main main main main main main main main main main"
     "content content content content content content content content content content content content"
     "footer footer footer footer footer footer footer footer footer footer footer footer";
-  grid-gap: 0.2rem;
+  grid-gap: 0.5rem;
   font-weight: 800;
   text-transform: uppercase;
   font-size: 12px;
@@ -92,7 +92,7 @@ footer {
   display: none;
 }
 #banner1 {
-  grid-area: 2/5/3/9;
+  grid-area: 2/7/3/11;
   /* box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
     rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset,
     rgba(0, 0, 0, 0.1) 0px 1px 2px 0px; */
@@ -102,14 +102,14 @@ footer {
   justify-content: center;
 }
 #banner2 {
-  grid-area: 3/7/6/11;
+  grid-area: 3/6/6/10;
   box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
     rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset,
     rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
   border-radius: 5px;
 }
 #banner3 {
-  grid-area: 3/3/6/7;
+  grid-area: 1/3/4/7;
   box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
     rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset,
     rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
@@ -155,8 +155,7 @@ article {
 }
 #article1,
 #article2,
-#article3
-{
+#article3 {
   min-width: 15rem;
   max-width: 30rem;
 }
@@ -234,7 +233,7 @@ a {
   text-align: center;
 }
 
-.liens{
+.liens {
   margin: 0;
 }
 
@@ -265,7 +264,6 @@ a {
   list-style-type: none;
   text-align: center;
   height: 100%;
-
 }
 
 .navigationCheckbox:checked ~ #sidebar {
