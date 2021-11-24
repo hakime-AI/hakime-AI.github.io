@@ -19,7 +19,7 @@ body {
     "main main main main main main main main main main main main"
     "content content content content content content content content content content content content"
     "footer footer footer footer footer footer footer footer footer footer footer footer";
-  grid-gap: 0.5rem;
+  grid-gap: 0.75rem;
   font-weight: 800;
   text-transform: uppercase;
   font-size: 12px;
@@ -92,7 +92,7 @@ footer {
   display: none;
 }
 #banner1 {
-  grid-area: 2/7/3/11;
+  grid-area: 1/7/3/11;
   /* box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
     rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset,
     rgba(0, 0, 0, 0.1) 0px 1px 2px 0px; */
