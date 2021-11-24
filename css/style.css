@@ -2,11 +2,6 @@
   margin: 0px;
   padding: 0px;
 }
-body {
-  font-family: "Inter", sans-serif;
-  
-  padding: 5px;
-}
 
 .container {
   display: grid;
@@ -22,9 +17,10 @@ body {
   grid-gap: 0.75rem;
   font-weight: 800;
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 0.75rem;
   color: #004d40;
   text-align: center;
+  padding: 5px;
 }
 /* main blocks */
 nav,
@@ -46,6 +42,7 @@ nav {
 }
 
 main {
+  /* background: #f9f9f9  ; */
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(6, 1fr);
@@ -106,6 +103,7 @@ footer {
   box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
     rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset,
     rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+  /* box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px; */
   border-radius: 5px;
 }
 #banner3 {
@@ -124,9 +122,9 @@ div a,
   justify-content: center;
 }
 
-div a:visited {
+/* div a{
   color: #004d40;
-}
+} */
 
 /* h1 {
   
@@ -208,18 +206,17 @@ div img {
 a {
   text-align: center;
   display: block;
-  font-family: inherit;
   text-decoration: none;
-  font-weight: bold;
   margin: 1rem;
+  color: #004d40;
 }
-/* button debute  */
+/* sidebarBtn debute  */
 
-.navigationCheckbox {
+.checkbox {
   display: none;
 }
 
-#buttonLook {
+#sidebarBtnLook {
   position: relative;
   background-color: #fff;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 0 1px;
@@ -231,16 +228,16 @@ a {
   border-radius: 0 50% 50% 0;
   z-index: 2000;
   text-align: center;
+  transition: all 0.8s cubic-bezier(1, 0.01, 0.71, 0.75);
 }
 
 .liens {
   margin: 0;
 }
 
-.navigationBtn {
+#sidebarBtn {
   position: relative;
   height: 2rem;
-  width: -2rem;
   position: fixed;
   top: 1rem;
   right: -1.5rem;
@@ -256,33 +253,96 @@ a {
   background-color: #fff;
 }
 
-.navigationListe {
+.sidebarListe {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   position: relative;
   list-style-type: none;
-  text-align: center;
+  align-items: center;
   height: 100%;
 }
 
-.navigationCheckbox:checked ~ #sidebar {
+#side:checked ~ .container #sidebar {
   opacity: 1;
   transform: translate(0);
 }
-.navigationCheckbox:checked ~ #sidebar {
+#side:checked ~ .container #sidebar {
   opacity: 1;
 }
-.navigationCheckbox:checked ~ #sidebar .navigationBtn {
-  -moz-transform: scaleX(-1);
-  -o-transform: scaleX(-1);
-  -webkit-transform: scaleX(-1);
+#side:checked ~ .container #sidebar #sidebarBtn {
   transform: scaleX(-1);
-  filter: FlipH;
-  -ms-filter: "FlipH";
 }
 
-/* button end  */
+/* sidebar end  */
+/* darkMode debut */
+
+#switchBtnLook {
+  background: #c6c6c6;
+  width: 3rem;
+  height: 1.5rem;
+  border-radius: 20px;
+  align-items: center;
+  transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+#darkModeBtn {
+  position: absolute;
+  background: #004d40;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  transform: translate(-100%);
+  transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.darkMode {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#darkModeIcon {
+}
+
+#dark:checked ~ .container #sidebar #switchBtnLook {
+  background: white;
+  color: white;
+}
+
+#dark:checked ~ .container #sidebar #darkModeBtn {
+  background: #333333;
+}
+
+#dark:checked ~ .container {
+  transition: all 0.8s cubic-bezier(1, 0.01, 0.71, 0.75);
+  background: #333333;
+  color: white;
+}
+#dark:checked ~ .container > * {
+  transition: all 0.8s cubic-bezier(1, 0.01, 0.71, 0.75);
+  background: #333333;
+  color: white;
+}
+#dark:checked ~ div a {
+  color: white;
+}
+#dark:checked ~ .container #sidebar #sidebarBtnLook {
+  background-color: #333333;
+  color: white;
+}
+
+/* #dark:checked ~ .container {
+  background: #1e1e1e;
+  color: white;
+} */
+
+#dark:checked ~ .container #sidebar #darkModeBtn {
+  transform: translate(0);
+}
+
+/* darkMode end  */
 @media only screen and (max-width: 768px) {
   .container {
     grid-template-columns: 1fr;
