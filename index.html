@@ -5,13 +5,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/Style.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
     <!-- <script src="../Js/jquery-3.6.0.min.js"></script> -->
 </head>
 
 <body>
+
+    <input type="checkbox" class="checkbox" id="side">
+    <input type="checkbox" class="checkbox" id="dark">
+
     <div class="container">
+
         <nav>
             <h1>Navbar</h1>
             <div id="menu">
@@ -26,28 +31,31 @@
 
 
 
-
-        <input type="checkbox" class="navigationCheckbox" id="navi">
-
-
         <div id="sidebar">
-            <div id="buttonLook">
-                <label for="navi" class="navigationBtn">
+            <div id="sidebarBtnLook">
+                <label for="side" id="sidebarBtn">
                     <img src="image/arrow_right.svg" alt="">
                 </label>
             </div>
 
-            <ul class="navigationListe">
+            <ul class="sidebarListe">
 
-                <li class="navigationItem Accueil"><a href="#" class="liens">Accueil</a></li>
+                <li class="sidebarItem Accueil"><a href="#" class="liens">Accueil</a></li>
 
-                <li class="navigationItem Nos produits"><a href="#" class="liens">Nos produits</a></li>
+                <li class="sidebarItem Nos produits"><a href="#" class="liens">Nos produits</a></li>
 
-                <li class="navigationItem Blog"><a href="#" class="liens">Blog</a></li>
+                <li class="sidebarItem Blog"><a href="#" class="liens">Blog</a></li>
 
-                <li class="navigationItem À propos"><a href="#" class="liens">À propos</a></li>
+                <li class="sidebarItem À propos"><a href="#" class="liens">À propos</a></li>
 
-                <li class="navigationItem Contact"><a href="#" class="liens">Contact</a></li>
+                <li class="sidebarItem darkMode">
+                    <div id="switchBtnLook">
+                        <label for="dark" id="darkModeBtn">
+                            <span id="darkModeIcon">&nbsp;</span>
+                        </label>
+                    </div>
+                    <p>Dark Mode</p> 
+                </li>
             </ul>
 
 
@@ -109,7 +117,7 @@
     </div>
 
 
-    <script src="Js/Script.js"></script>
+    <script src="../Js/Script.js"></script>
 </body>
 
 </html>
