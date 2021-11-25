@@ -7,20 +7,23 @@
   display: grid;
   height: auto;
   scroll-behavior: smooth;
-  grid-template-columns: repeat(12, minmax(80px, 1fr));
+  grid-template-columns: 1fr;
   grid-template-rows: 10vh 90vh auto 10vh;
   grid-template-areas:
-    "nav nav nav nav nav nav nav nav nav nav nav nav"
-    "main main main main main main main main main main main main"
-    "content content content content content content content content content content content content"
-    "footer footer footer footer footer footer footer footer footer footer footer footer";
+    "nav "
+    "main "
+    "content "
+    "footer ";
   grid-gap: 0.75rem;
   font-weight: 800;
   text-transform: uppercase;
   font-size: 0.75rem;
   color: #004d40;
   text-align: center;
-  padding: 5px;
+  padding: 5px;transition: all 0.8s cubic-bezier(1, 0.01, 0.71, 0.75);
+}
+.container>*{
+  transition: all 0.8s cubic-bezier(1, 0.01, 0.71, 0.75);
 }
 /* main blocks */
 nav,
@@ -81,6 +84,14 @@ footer {
   grid-area: footer;
 }
 /* sub blocks */
+h1,
+div a,#banner1,
+#banner3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 #menu {
   display: flex;
 }
@@ -94,9 +105,7 @@ footer {
     rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset,
     rgba(0, 0, 0, 0.1) 0px 1px 2px 0px; */
   border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+
 }
 #banner2 {
   grid-area: 3/6/6/10;
@@ -114,13 +123,7 @@ footer {
   border-radius: 5px;
 }
 
-h1,
-div a,
-#banner3 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
+
 
 /* div a{
   color: #004d40;
@@ -283,7 +286,7 @@ a {
   height: 1.5rem;
   border-radius: 20px;
   align-items: center;
-  transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+  transition: all 0.8s cubic-bezier(1, 0.01, 0.71, 0.75);
 }
 
 #darkModeBtn {
@@ -294,16 +297,13 @@ a {
   border-radius: 50%;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   transform: translate(-100%);
-  transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+  transition: all 0.8s cubic-bezier(1, 0.01, 0.71, 0.75);
 }
 
 .darkMode {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-#darkModeIcon {
 }
 
 #dark:checked ~ .container #sidebar #switchBtnLook {
@@ -316,12 +316,10 @@ a {
 }
 
 #dark:checked ~ .container {
-  transition: all 0.8s cubic-bezier(1, 0.01, 0.71, 0.75);
   background: #333333;
   color: white;
 }
 #dark:checked ~ .container > * {
-  transition: all 0.8s cubic-bezier(1, 0.01, 0.71, 0.75);
   background: #333333;
   color: white;
 }
@@ -347,11 +345,7 @@ a {
   .container {
     grid-template-columns: 1fr;
     grid-template-rows: 10vh 100vw auto 10vh;
-    grid-template-areas:
-      "nav"
-      "main"
-      "content"
-      "footer";
+
   }
   main {
     grid-template-columns: repeat(2, auto);
